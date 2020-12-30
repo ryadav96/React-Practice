@@ -7,10 +7,16 @@ import App from "./App";
 
 const todoListD = [];
 const reducer = (state = { todoList: todoListD }, action) => {
+ 
   if (action.type === "ADD") {
-    return { todoList: [...state.todoList, action.payload] };
+    console.log("add")
+    state.todoList.push(action.payload);
+     const newTdoList = state.todoList.map(list=>list);
+     return {todoList: newTdoList};
+    // return { todoList: [...state.todoList, action.payload] };
   }
-  return { todoList: todoListD };
+  console.log("default")
+  return state;
 };
 const store = createStore(reducer);
 
