@@ -13,7 +13,6 @@ const reducer = (state = { todoList: todoListD }, action) => {
     state.todoList.push(action.payload);
      const newTdoList = state.todoList.map(list=>list);
      return {todoList: newTdoList};
-    // return { todoList: [...state.todoList, action.payload] };
   }
   console.log("default")
   return state;
